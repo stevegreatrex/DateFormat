@@ -1,0 +1,45 @@
+﻿(function (dateFormat, undefined) {
+    "use strict";
+
+	dateFormat.dotnet = {
+        "day-of-month-1": "d",
+        "day-of-month-2": "dd",
+        "day-of-week-abbr": "ddd",
+        "day-of-week": "dddd",
+        "month-1": "M",
+        "month-2": "MM",
+        "month-name-abbr": "MMM",
+        "month-name": "MMMM",
+        "year-2": "yy",
+        "year-3": "yyy",
+        "year-4": "yyyy",
+        "am-pm-2": "tt",
+        "am-pm-1": "t",
+        "time-24h-1": "H",
+        "time-24h-2": "HH",
+        "time-12h-1": "h",
+        "time-12h-2": "hh",
+        "minutes-1": "m",
+        "minutes-2": "mm",
+        "seconds-1": "s",
+        "seconds-2": "ss",
+        "deciseconds-optional": "F",
+        "centiseconds-optional": "FF",
+        "milliseconds-optional": "FFF",
+        "microseconds-optional": "FFFF",
+        "nanoseconds-optional": "FFFFF",
+        "picoseconds-optional": "FFFFFF",
+        "femtoseconds-optional": "FFFFFFF",
+        "deciseconds": "f",
+        "centiseconds": "ff",
+        "milliseconds": "fff",
+        "microseconds": "ffff",
+        "nanoseconds": "fffff",
+        "picoseconds": "ffffff",
+        "femtoseconds": "fffffff",
+        "timezone-1": "z",
+        "timezone-2": "zz",
+        "timezone-3": "zzz"
+	};
+
+}(window.dateFormat));

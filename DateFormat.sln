@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "DateFormat", "http://localhost:1498", "{3F11E2FE-7459-493A-B6CA-196113032A1F}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_1498"
+		Debug.AspNetCompiler.PhysicalPath = "..\..\..\..\..\..\Development\Home\DateFormat\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_1498\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_1498"
+		Release.AspNetCompiler.PhysicalPath = "..\..\..\..\..\..\Development\Home\DateFormat\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_1498\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "..\..\..\..\..\..\Development\Home\DateFormat\"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3F11E2FE-7459-493A-B6CA-196113032A1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F11E2FE-7459-493A-B6CA-196113032A1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
