@@ -6,20 +6,20 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "DateFormat", "http://localh
 		UseIISExpress = "true"
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_1498"
-		Debug.AspNetCompiler.PhysicalPath = "..\..\..\..\..\..\Development\Home\DateFormat\"
+		Debug.AspNetCompiler.PhysicalPath = "..\DateFormat\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_1498\"
 		Debug.AspNetCompiler.Updateable = "true"
 		Debug.AspNetCompiler.ForceOverwrite = "true"
 		Debug.AspNetCompiler.FixedNames = "false"
 		Debug.AspNetCompiler.Debug = "True"
 		Release.AspNetCompiler.VirtualPath = "/localhost_1498"
-		Release.AspNetCompiler.PhysicalPath = "..\..\..\..\..\..\Development\Home\DateFormat\"
+		Release.AspNetCompiler.PhysicalPath = "..\DateFormat\"
 		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_1498\"
 		Release.AspNetCompiler.Updateable = "true"
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
-		SlnRelativePath = "..\..\..\..\..\..\Development\Home\DateFormat\"
+		SlnRelativePath = "..\DateFormat\"
 	EndProjectSection
 EndProject
 Global
