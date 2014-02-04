@@ -5,13 +5,15 @@
 
     module("dateFormat");
 
-    var checkDotNetToMomentConversion = function (source, expected) {
+    var checkDotNetToMomentConversion = function (source, expected, unidirectional) {
         var converted = dateFormat.convert(source, dateFormat.dotnet, dateFormat.moment);
 
         equal(converted, expected);
 
-        var reconverted = dateFormat.convert(source, dateFormat.moment, dateFormat.dotnet);
-        equal(reconverted, source, "Should be able to convert back to the original string");
+        if (!unidirectional) {
+        	var reconverted = dateFormat.convert(converted, dateFormat.moment, dateFormat.dotnet);
+        	equal(reconverted, source, "Should be able to convert back to the original string");
+        }
     };
 
     test("converts from dotnet to moment", function () {
@@ -36,26 +38,27 @@
         checkDotNetToMomentConversion("mm", "mm");
         checkDotNetToMomentConversion("s", "s");
         checkDotNetToMomentConversion("ss", "ss");
-        checkDotNetToMomentConversion("F", "S");
-        checkDotNetToMomentConversion("FF", "SS");
-        checkDotNetToMomentConversion("FFF", "SSS");
-        checkDotNetToMomentConversion("FFFF", "SSSS");
-        checkDotNetToMomentConversion("FFFFF", "SSSSS");
-        checkDotNetToMomentConversion("FFFFFF", "SSSSSS");
-        checkDotNetToMomentConversion("FFFFFFF", "SSSSSSS");
-        checkDotNetToMomentConversion("f", "S");
-        checkDotNetToMomentConversion("ff", "SS");
-        checkDotNetToMomentConversion("fff", "SSS");
-        checkDotNetToMomentConversion("ffff", "SSSS");
-        checkDotNetToMomentConversion("fffff", "SSSSS");
-        checkDotNetToMomentConversion("ffffff", "SSSSSS");
-        checkDotNetToMomentConversion("fffffff", "SSSSSSS");
+		//can only test following conversions one-way as multiple elements map onto the same source
+        checkDotNetToMomentConversion("F", "S", true);
+        checkDotNetToMomentConversion("FF", "SS", true);
+        checkDotNetToMomentConversion("FFF", "SSS", true);
+        checkDotNetToMomentConversion("FFFF", "SSSS", true);
+        checkDotNetToMomentConversion("FFFFF", "SSSSS", true);
+        checkDotNetToMomentConversion("FFFFFF", "SSSSSS", true);
+        checkDotNetToMomentConversion("FFFFFFF", "SSSSSSS", true);
+        checkDotNetToMomentConversion("f", "S", true);
+        checkDotNetToMomentConversion("ff", "SS", true);
+        checkDotNetToMomentConversion("fff", "SSS", true);
+        checkDotNetToMomentConversion("ffff", "SSSS", true);
+        checkDotNetToMomentConversion("fffff", "SSSSS", true);
+        checkDotNetToMomentConversion("ffffff", "SSSSSS", true);
+        checkDotNetToMomentConversion("fffffff", "SSSSSSS", true);
         checkDotNetToMomentConversion("z", "Z");
         checkDotNetToMomentConversion("zz", "ZZ");
         checkDotNetToMomentConversion("zzz", "ZZZ");
         checkDotNetToMomentConversion(
             "d dd ddd dddd M MM MMM MMMM yy yyy yyyy tt t H HH h hh m mm s ss F FF FFF FFFF FFFFF FFFFFF FFFFFFF z zz zzz unknown d",
-            "D DD ddd dddd M MM MMM MMMM YY YYY YYYY A a H HH h hh m mm s ss S SS SSS SSSS SSSSS SSSSSS SSSSSSS Z ZZ ZZZ unknown D");
+            "D DD ddd dddd M MM MMM MMMM YY YYY YYYY A a H HH h hh m mm s ss S SS SSS SSSS SSSSS SSSSSS SSSSSSS Z ZZ ZZZ unknown D", true);
     });
 
     var checkDotNetTojqplotConversion = function (source, expected) {
@@ -63,7 +66,7 @@
 
         equal(converted, expected);
 
-        var reconverted = dateFormat.convert(source, dateFormat.jqplot, dateFormat.dotnet);
+        var reconverted = dateFormat.convert(converted, dateFormat.jqplot, dateFormat.dotnet);
         equal(reconverted, source, "Should be able to convert back to the original string");
     };
 
@@ -85,5 +88,27 @@
 
         equal(dateFormat.convert("CONVERTED MM", partialFormat, dateFormat.dotnet),
             "d MM", "Tokens missing from the source format should be ignored");
+    });
+
+    var checkDotNetTojQueryUIConversion = function (source, expected) {
+    	var converted = dateFormat.convert(source, dateFormat.dotnet, dateFormat.jqueryui);
+
+    	equal(converted, expected);
+
+    	var reconverted = dateFormat.convert(converted, dateFormat.jqueryui, dateFormat.dotnet);
+    	equal(reconverted, source, "Should be able to convert back to the original string");
+    };
+
+    test("converts to dotnet to jqueryui", function () {
+    	checkDotNetTojQueryUIConversion("d", "d");
+    	checkDotNetTojQueryUIConversion("dd", "dd");
+    	checkDotNetTojQueryUIConversion("ddd", "D");
+    	checkDotNetTojQueryUIConversion("dddd", "DD");
+    	checkDotNetTojQueryUIConversion("M", "m");
+    	checkDotNetTojQueryUIConversion("MM", "mm");
+    	checkDotNetTojQueryUIConversion("MMM", "M");
+    	checkDotNetTojQueryUIConversion("MMMM", "MM");
+    	checkDotNetTojQueryUIConversion("yy", "y");
+    	checkDotNetTojQueryUIConversion("yyyy", "yy");
     });
 }());

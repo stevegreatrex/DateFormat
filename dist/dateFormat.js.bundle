@@ -5,4 +5,5 @@
 	<file>/dateFormat.dotnet.js</file>
 	<file>/dateFormat.moment.js</file>
 	<file>/dateFormat.jqplot.js</file>
+	<file>/dateFormat.jqueryui.js</file>
 </bundle>
